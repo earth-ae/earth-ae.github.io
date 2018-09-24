@@ -27866,7 +27866,7 @@ function earth(app) {
 
   function buildRenderer(mesh, globe) {
     if (!mesh || !globe) return null;
-    report.status("Rendering Globe...");
+    report.status("Rendering Flat Earth Map...");
     log.time("rendering map"); // UNDONE: better way to do the following?
 
     var dispatch = underscore__WEBPACK_IMPORTED_MODULE_2__["clone"](backbone__WEBPACK_IMPORTED_MODULE_5__["Events"]);
