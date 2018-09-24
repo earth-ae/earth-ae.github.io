@@ -80,8 +80,11 @@ download "gaia.nullschool.net"  "/data/rtgsst/current"    "current-sea_surface_t
 download "gaia.nullschool.net"  "/data/ww3/current"       "current-primary-wave-30m.epak"
 
 download "gaia.nullschool.net"  "/data/oscar"             "oscar-catalog.json"
+for o in `cat ./data/oscar/oscar-catalog.json | sed 's/"/ /g' | sed 's/\[//g' | sed 's/\]//g' | sed 's/,//g'`; do
+    download "gaia.nullschool.net" "/data/oscar" "$o";
+done
+
 download "gaia.nullschool.net"  "/data/ww3/current"       "current-sig_height-wave-30m.epak"
-download "gaia.nullschool.net"  "/data/oscar"             "20180801-surface-currents-oscar-0.33.epak"
 download "gaia.nullschool.net"  "/data/gfs/current"       "current-wind-isobaric-1000hPa-gfs-0.25.epak"
 download "gaia.nullschool.net"  "/data/gfs/current"       "current-primary-wave-30m.epak"
 download "gaia.nullschool.net"  "/data/gfs/current"       "current-sig_height-wave-30m.epak"
