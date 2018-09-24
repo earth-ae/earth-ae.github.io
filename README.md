@@ -1,5 +1,4 @@
-# [Earth AE](https://earth-ae.github.io) a fork of https://github.com/systemsplanet/earth-ae
-
+# [Earth AE](https://earth-ae.github.io) a fork of [https://github.com/systemsplanet/earth-ae](https://github.com/systemsplanet/earth-ae)
 
 ### download data to update it, on Linux or Mac
 
@@ -7,6 +6,17 @@
 ./download-data.sh
 ```
 
+Changes from the fork are:
+
+- Removed google analytics tracking code
+- Fixed languages
+- Redirect to AE map with location of browser is /
+- Hosted on github, obviously, not locally
+- Added download-data.sh script to update the data, works from Linux and Mac, I could care less about Windblows
+- Changed "Rendering Globe..." to "Rendering Flat Earth Map..."
+- Fixed urls that point to earth.nullshool.net to point to earth-ae.github.io
+
+Original readme document from fork below:
 
 Earth with a **satisfyingly flat** Azimuthal Equidistant projection.
 
