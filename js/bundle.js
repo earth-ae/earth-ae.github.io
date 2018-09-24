@@ -1706,23 +1706,23 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
  * @license
  *
  * chroma.js - JavaScript library for color conversions
- * 
+ *
  * Copyright (c) 2011-2015, Gregor Aisch
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- * 
+ *
  * 1. Redistributions of source code must retain the above copyright notice, this
  *    list of conditions and the following disclaimer.
- * 
+ *
  * 2. Redistributions in binary form must reproduce the above copyright notice,
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
- * 
+ *
  * 3. The name Gregor Aisch may not be used to endorse or promote products
  *    derived from this software without specific prior written permission.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -1956,23 +1956,23 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   chroma.version = '1.0.1';
   /**
       chroma.js
-  
+
       Copyright (c) 2011-2013, Gregor Aisch
       All rights reserved.
-  
+
       Redistribution and use in source and binary forms, with or without
       modification, are permitted provided that the following conditions are met:
-  
+
       * Redistributions of source code must retain the above copyright notice, this
         list of conditions and the following disclaimer.
-  
+
       * Redistributions in binary form must reproduce the above copyright notice,
         this list of conditions and the following disclaimer in the documentation
         and/or other materials provided with the distribution.
-  
+
       * The name Gregor Aisch may not be used to endorse or promote products
         derived from this software without specific prior written permission.
-  
+
       THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
       AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
       IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -1983,7 +1983,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
       EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  
+
       @source: https://github.com/gka/chroma.js
    */
 
@@ -2061,20 +2061,20 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   }();
   /**
   	ColorBrewer colors for chroma.js
-  
-  	Copyright (c) 2002 Cynthia Brewer, Mark Harrower, and The 
+
+  	Copyright (c) 2002 Cynthia Brewer, Mark Harrower, and The
   	Pennsylvania State University.
-  
-  	Licensed under the Apache License, Version 2.0 (the "License"); 
+
+  	Licensed under the Apache License, Version 2.0 (the "License");
   	you may not use this file except in compliance with the License.
-  	You may obtain a copy of the License at	
+  	You may obtain a copy of the License at
   	http://www.apache.org/licenses/LICENSE-2.0
-  
+
   	Unless required by applicable law or agreed to in writing, software distributed
   	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
   	CONDITIONS OF ANY KIND, either express or implied. See the License for the
   	specific language governing permissions and limitations under the License.
-  
+
       @preserve
    */
 
@@ -2118,7 +2118,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   };
   /**
   	X11 color names
-  
+
   	http://www.w3.org/TR/css3-color/#svg-color
    */
 
@@ -2491,23 +2491,23 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   chroma.bezier = _bezier;
   /*
       chroma.js
-  
+
       Copyright (c) 2011-2013, Gregor Aisch
       All rights reserved.
-  
+
       Redistribution and use in source and binary forms, with or without
       modification, are permitted provided that the following conditions are met:
-  
+
       * Redistributions of source code must retain the above copyright notice, this
         list of conditions and the following disclaimer.
-  
+
       * Redistributions in binary form must reproduce the above copyright notice,
         this list of conditions and the following disclaimer in the documentation
         and/or other materials provided with the distribution.
-  
+
       * The name Gregor Aisch may not be used to endorse or promote products
         derived from this software without specific prior written permission.
-  
+
       THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
       AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
       IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -2518,7 +2518,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
       EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  
+
       @source: https://github.com/gka/chroma.js
    */
 
@@ -3125,7 +3125,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
     Convert from a qualitative parameter h and a quantitative parameter l to a 24-bit pixel.
     These formulas were invented by David Dalrymple to obtain maximum contrast without going
     out of gamut if the parameters are in the range 0-1.
-    
+
     A saturation multiplier was added by Gregor Aisch
      */
     var c, h, l, ref;
@@ -3627,23 +3627,23 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   chroma.blend = _blend;
   /*
       chroma.js
-  
+
       Copyright (c) 2011-2013, Gregor Aisch
       All rights reserved.
-  
+
       Redistribution and use in source and binary forms, with or without
       modification, are permitted provided that the following conditions are met:
-  
+
       * Redistributions of source code must retain the above copyright notice, this
         list of conditions and the following disclaimer.
-  
+
       * Redistributions in binary form must reproduce the above copyright notice,
         this list of conditions and the following disclaimer in the documentation
         and/or other materials provided with the distribution.
-  
+
       * The name Gregor Aisch may not be used to endorse or promote products
         derived from this software without specific prior written permission.
-  
+
       THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
       AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
       IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -3654,7 +3654,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
       EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  
+
       @source: https://github.com/gka/chroma.js
    */
 
@@ -4021,23 +4021,23 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
   };
   /*
       chroma.js
-  
+
       Copyright (c) 2011-2013, Gregor Aisch
       All rights reserved.
-  
+
       Redistribution and use in source and binary forms, with or without
       modification, are permitted provided that the following conditions are met:
-  
+
       * Redistributions of source code must retain the above copyright notice, this
         list of conditions and the following disclaimer.
-  
+
       * Redistributions in binary form must reproduce the above copyright notice,
         this list of conditions and the following disclaimer in the documentation
         and/or other materials provided with the distribution.
-  
+
       * The name Gregor Aisch may not be used to endorse or promote products
         derived from this software without specific prior written permission.
-  
+
       THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
       AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
       IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -4048,7 +4048,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
       OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
       NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
       EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-  
+
       @source: https://github.com/gka/chroma.js
    */
 
@@ -31160,7 +31160,7 @@ function newGlobe(source, view) {
 } // ============================================================================================
 
 // MAL
-function azimuthalEquidistant(view) { return newGlobe({ newProjection: function() { return fitProjection(_d3__WEBPACK_IMPORTED_MODULE_2__["geoAzimuthalEquidistant"]().precision(0.1).rotate([0, -90]), view); 	} 	}); } 
+function azimuthalEquidistant(view) { return newGlobe({ newProjection: function() { return fitProjection(_d3__WEBPACK_IMPORTED_MODULE_2__["geoAzimuthalEquidistant"]().precision(0.1).rotate([0, -90]), view); 	} 	}); }
 
 function atlantis(view) {
   return newGlobe({
@@ -32435,7 +32435,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
 var DEFAULT_CONFIG = "current/wind/surface/level/orthographic";
 
-function topologyFile() {	
+function topologyFile() {
   return isMobile() ? "/data/earth-topo-mobile.json?v3" : "/data/earth-topo.json?v3";
 }
 
@@ -35006,15 +35006,15 @@ __webpack_require__.r(__webpack_exports__);
   var CUTOFF = new Date("2016-02-20");
 
   function gaia(path) {
-	return "." + path; //MAL added: return "." + path; 
-    var host = _micro__WEBPACK_IMPORTED_MODULE_2__["isDevMode"]() ? "" : "https://gaia.nullschool.net",
+	return "." + path; //MAL added: return "." + path;
+    var host = _micro__WEBPACK_IMPORTED_MODULE_2__["isDevMode"]() ? "" : "https://earth-ae.github.io",
         url = host + path,
         instance = _micro__WEBPACK_IMPORTED_MODULE_2__["siteInstance"]();
     return instance ? url + "?" + instance : url;
   }
 
   function old(path) {
-    return "https://earth.nullschool.net" + path;
+    return "https://earth-ae.github.io" + path;
   }
 
   products.gaia = gaia;
@@ -35176,14 +35176,14 @@ __webpack_require__.r(__webpack_exports__);
           }
           return parts;
       }
-  
+
       function hrrrStep(date, step) {
           const offset = (step > 1 ? 8 : step < -1 ? -8 : step) * 15;
           console.log(date, offset, utc.add(date, {minute: offset}));
-  
+
           return utc.add(date, {minute: offset});
       }
-  
+
       function hrrrPath(attr, type, surface, level) {
           const date = hrrrDate(attr.date), isCurrent = attr.date === "current";
           const dir = isCurrent ? "current" : utc.print(date, "{yyyy}/{MM}/{dd}");
@@ -35393,7 +35393,7 @@ __webpack_require__.r(__webpack_exports__);
               _.clone(date);
           return utc.normalize(parts);
       }
-  
+
       /!**
        * @param {Object} date the date parts
        * @param {number} step the number of steps away: ±1 or ±10
@@ -35401,7 +35401,7 @@ __webpack_require__.r(__webpack_exports__);
       function argoStep(date, step) {
           return utc.add(date, {month: step < 0 ? -1 : 1});
       }
-  
+
       function argoPath(date, type, pressureLevel) {
           date = argoDate(date);
           const dir = "https://data.scripps.earth/argo/" + utc.print(date, "{yyyy}/");
@@ -36565,7 +36565,7 @@ __webpack_require__.r(__webpack_exports__);
                     });
                 }
             },
-    
+
             "argo_temp_anom": {
                 matchesOverlay: _.matches({overlayType: "argo_temp_anom"}),
                 create: function(attr) {
@@ -36604,7 +36604,7 @@ __webpack_require__.r(__webpack_exports__);
                     });
                 }
             },
-    
+
             "argo_mean_salinity": {
                 matchesOverlay: _.matches({overlayType: "argo_mean_salinity"}),
                 create: function(attr) {
@@ -36640,7 +36640,7 @@ __webpack_require__.r(__webpack_exports__);
                     });
                 }
             },
-    
+
             "argo_salinity_anom": {
                 matchesOverlay: _.matches({overlayType: "argo_salinity_anom"}),
                 create: function(attr) {
@@ -36676,8 +36676,8 @@ __webpack_require__.r(__webpack_exports__);
                             [  0.4/2,  [194, 106, 80]],
                             [  0.6/2,  [166, 77, 40]],
                             [  0.8,  [138, 48, 0]]
-    
-    
+
+
                             // [ -0.8/4,  [169, 104, 54]],
                             // [ -0.6/4,  [183, 126, 82]],
                             // [ -0.4/4,  [198, 148, 109]],
@@ -36688,7 +36688,7 @@ __webpack_require__.r(__webpack_exports__);
                             // [ 0.4/4,  [77, 77, 255]],
                             // [ 0.6/4,  [49, 49, 255]],
                             // [ 0.8/4,  [20, 20, 255]]
-    
+
                             // [-6.0,  [255, 255, 255]],
                             // [-3,    [  7, 252, 254]],
                             // [-1.5,  [ 66,  42, 253]],
@@ -37022,7 +37022,7 @@ __webpack_require__.r(__webpack_exports__);
                     });
                 }
             },
-    
+
             "o3": {
                 matchesOverlay: _.matches({overlayType: "o3"}),
                 create: function(attr) {
@@ -37057,7 +37057,7 @@ __webpack_require__.r(__webpack_exports__);
                     });
                 }
             },
-    
+
             "no2": {
                 matchesOverlay: _.matches({overlayType: "no2"}),
                 create: function(attr) {
@@ -37092,7 +37092,7 @@ __webpack_require__.r(__webpack_exports__);
                     });
                 }
             },
-    
+
             "so2": {
                 matchesOverlay: _.matches({overlayType: "so2"}),
                 create: function(attr) {
