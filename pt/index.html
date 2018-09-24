@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <!-- Copyright (c) 2018 Cameron Beccario. For a free version of this project, see https://github.com/cambecc/earth -->
-<html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="pt" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 <head>
     <meta charset="utf-8"/>
-    <title>earth :: a global map of wind, weather, and ocean conditions</title>
+    <title>earth :: uma mapa global do vento, tempo, e condições do oceano</title>
     <script type="application/ld+json">{
       "@context": "http://schema.org",
       "@type": "Map",
       "name": "earth",
-      "description": "See current wind, weather, ocean, and pollution conditions, as forecast by supercomputers, on an interactive animated map. Updated every three hours.",
+      "description": "Veja as condições atuais de vento, tempo, oceano e poluição, previstas por supercomputadores, em um mapa animado e interativo. Atualizações a cada três horas.",
       "author": {
         "@type": "Person",
         "name": "Cameron Beccario"
@@ -27,7 +28,7 @@
             }
         }
     </script>
-    <meta name="description"        content="See current wind, weather, ocean, and pollution conditions, as forecast by supercomputers, on an interactive animated map. Updated every three hours."/>
+    <meta name="description"        content="Veja as condições atuais de vento, tempo, oceano e poluição, previstas por supercomputadores, em um mapa animado e interativo. Atualizações a cada três horas."/>
 
     <meta name="viewport"           content="initial-scale=0.75, user-scalable=no"/>
     <meta name="format-detection"   content="telephone=no"/>
@@ -37,7 +38,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/ipad-icon.png?v2"/>
 
     <!-- $LANG$ -->
-    <link rel="canonical" href="https://earth-ae.github.io"/>
+    <link rel="canonical" href="https://earth-ae.github.io/pt/"/>
     <link rel="alternate" hreflang="en" href="https://earth-ae.github.io"/>
     <link rel="alternate" hreflang="cs" href="https://earth-ae.github.io/cs/"/>
     <link rel="alternate" hreflang="fr" href="https://earth-ae.github.io/fr/"/>
@@ -54,20 +55,20 @@
 
 @font-face {
     font-family: mplus-2p-light-sub;
-    src: url("/styles/mplus-2p-light-sub.woff2?v3") format("woff2"),
-         url("/styles/mplus-2p-light-sub.woff?v3") format("woff");
+    src: url("/mplus-2p-light-sub.woff2?v3") format("woff2"),
+         url("/mplus-2p-light-sub.woff?v3") format("woff");
 }
 
 @font-face {
     font-family: NotoSansCJKsc-Light-sub;
-    src: url("/styles/NotoSansCJKsc-Light-sub.woff2?v2") format("woff2"),
-         url("/styles/NotoSansCJKsc-Light-sub.woff?v2") format("woff");
+    src: url("/NotoSansCJKsc-Light-sub.woff2?v2") format("woff2"),
+         url("/NotoSansCJKsc-Light-sub.woff?v2") format("woff");
 }
 
 @font-face {
     font-family: fontawesome-sub;
-    src: url("/styles/fontawesome-sub.woff2?v2") format("woff2"),
-         url("/styles/fontawesome-sub.woff?v2") format("woff");
+    src: url("/fontawesome-sub.woff2?v2") format("woff2"),
+         url("/fontawesome-sub.woff?v2") format("woff");
 }
 
 /**************************************************************************************************
@@ -532,7 +533,7 @@ sup, sub {
 </head>
 <body>
 
-    <!--[if lte IE 9]><p id="warn">This site requires Internet Explorer 10 or newer.</p><![endif]-->
+    <!--[if lte IE 10]><p id="warn">Este site requer Internet Explorer 11 ou mais recente.</p><![endif]-->
 
     <div id="display">
         <canvas id="map" class="max-screen"></canvas>
@@ -548,7 +549,7 @@ sup, sub {
     <div id="sponsor" class="kiosk invisible">
         <!--<p><span id="sponsor-hide" class="text-button invisible">✕</span>favorite lang?</p>-->
         <!--<a id="sponsor-link" href="http://translate.nullschool.net">help translate</a>-->
-        <p><span id="sponsor-hide" class="text-button invisible">✕</span>community</p>
+        <p><span id="sponsor-hide" class="text-button invisible">✕</span>comunidade</p>
         <a id="sponsor-link" href="https://www.facebook.com/EarthWindMap">EarthWindMap</a>
     </div>
 
@@ -578,17 +579,17 @@ sup, sub {
         </div>
 
         <div id="menu" class="invisible">
-            <p>Date | <span
+            <p>Data | <span
                 id="data-date" class="local"></span> <span
                 id="toggle-zone" class="text-button"></span>
             </p>
-            <p>Data | <span id="data-layer"></span></p>
-            <p><span id="scale-label">Scale | </span><canvas id="scale"></canvas></p>
-            <p>Source | <span id="data-center"></span></p>
-            <p>Control | <span
+            <p>Dados | <span id="data-layer"></span></p>
+            <p><span id="scale-label">Escala  | </span><canvas id="scale"></canvas></p>
+            <p>Fonte | <span id="data-center"></span></p>
+            <p>Controle | <span
                 class="text-button" id="nav-now"
-                    title="Current Conditions"
-                >Now
+                    title="Condições Atuais"
+                >Atual
                 </span><span
                 class="noselect"><span
                     class="text-button" id="nav-backward-more"> « </span> – <span
@@ -596,27 +597,27 @@ sup, sub {
                     class="text-button" id="nav-forward"> › </span> – <span
                     class="text-button" id="nav-forward-more"> » </span></span><span
                 class="text-button" id="show-location"
-                    title="Current Position">⊕</span><span
-                class="text-button" id="option-show-grid" title="Toggle Grid"
-                >Grid</span><span
+                    title="Posição Atual">⊕</span><span
+                class="text-button" id="option-show-grid" title="Alternar grade"
+                >Grade</span><span
                 class="text-button" id="animate-start"
-                    title="Start/Stop Animation">▷</span><span
+                    title="Iniciar/Parar Animação">▷</span><span
                 class="text-button" id="hd"
-                    title="High Definition Mode"
+                    title="Modo Alta Definição"
                 >HD</span>
             </p>
-            <p>Mode | <span
-                class="text-button" id="air-mode">Air</span> – <span
-                class="text-button" id="ocean-mode">Ocean</span> – <span
-                class="text-button" id="chem-mode">Chem</span> – <span
-                class="text-button" id="particulates-mode">Particulates</span> – <span
+            <p>Modo | <span
+                class="text-button" id="air-mode">Ar</span> – <span
+                class="text-button" id="ocean-mode">Oceano</span> – <span
+                class="text-button" id="chem-mode">Quim</span> – <span
+                class="text-button" id="particulates-mode">Particulados</span> – <span
                 class="text-button" id="space-mode">Space</span><!-- – <span
                 class="text-button" id="argo-mode">Argo</span>-->
             </p>
-            <p class="wind-mode">Height | <span
+            <p class="wind-mode">Altura | <span
                 class="surface text-button" id="surface-level"
-                    title="Surface"
-                >Sfc</span> – <span
+                    title="Superfície"
+                >Spf</span> – <span
                 class="surface text-button" id="isobaric-1000hPa">1000</span> – <span
                 class="surface text-button" id="isobaric-850hPa">850</span> – <span
                 class="surface text-button" id="isobaric-700hPa">700</span> – <span
@@ -627,20 +628,20 @@ sup, sub {
             </p>
             <p class="wind-mode">Overlay | <span
                 class="text-button" id="wind"
-                    title="Wind Speed"
-                >Wind</span> – <span
+                    title="Velocidade do Vento"
+                >Vento</span> – <span
                 class="text-button" id="temp"
-                    title="Temperature"
+                    title="Temperatura"
                 >Temp</span> – <span
                 class="text-button" id="relative_humidity"
-                    title="Relative Humidity"
-                >RH</span> – <span
+                    title="Umidade Relativa"
+                >UH</span> – <span
                 class="text-button" id="wind_power_density"
-                    title="Instantaneous Wind Power Density"
+                    title="Densidade instantânea do vento"
                 >WPD</span> – <span
                 class="text-button" id="precip_3hr"
-                    title="3-hour Precipitation Accumulation"
-                >3HPA</span><!-- – <span
+                    title="Acúmulo de precipitação em 3 horas"
+                >3AP</span><!-- – <span
                 class="text-button" id="hrrrwind"
                     title="hrrrwind"
                 >hrrrwind</span> – <span
@@ -651,61 +652,61 @@ sup, sub {
                     title="hrrrradar"
                 >hrrrradar</span>--> – <span
                 class="text-button" id="cape"
-                    title="Convective Available Potential Energy from Surface"
+                    title="Energia Potencial Convectiva Disponível"
                 >CAPE</span>
             </p>
             <p class="wind-mode"><span style="visibility:hidden">Overlay</span> | <span
                 class="text-button" id="total_precipitable_water"
-                    title="Total Precipitable Water"
-                >TPW</span> – <span
+                    title="Total de água precipitável"
+                >TAP</span> – <span
                 class="text-button" id="total_cloud_water"
-                    title="Total Cloud Water"
-                >TCW</span> – <span
+                    title="Total de água na nuvem"
+                >TAN</span> – <span
                 class="text-button" id="mean_sea_level_pressure"
-                    title="Mean Sea Level Pressure"
+                    title="Pressão ao nível do mar"
                 >MSLP</span> – <span
                 class="text-button" id="misery_index"
-                    title="Misery Index"
+                    title="Índice de Desconforto Térmico"
                 >MI</span> – <span
-                class="text-button" id="off">None</span>
+                class="text-button" id="off">Nenhum</span>
             </p>
-            <p class="ocean-mode invisible">Animate | <span
+            <p class="ocean-mode invisible">Animar | <span
                 class="text-button" id="animate-currents"
-                    title="Ocean Currents"
-                >Currents</span> – <span
+                    title="Correntes oceânicas"
+                >Correntes</span> – <span
                 class="text-button" id="animate-waves"
-                    title="Peak Wave Period"
-                >Waves</span>
+                    title="Período de pico de onda"
+                >Ondas</span>
             </p>
             <p class="ocean-mode invisible">Overlay | <span
                 class="text-button" id="currents"
-                    title="Ocean Currents"
-                >Currents</span> – <span
+                    title="Correntes oceânicas"
+                >Correntes</span> – <span
                 class="text-button" id="primary_waves"
-                    title="Peak Wave Period"
-                >Waves</span>
+                    title="Período de pico de onda"
+                >Ondas</span>
             </p>
             <p class="ocean-mode invisible"><span style="visibility:hidden">Overlay</span> | <span
                 class="text-button" id="sea_surface_temp"
-                    title="Sea Surface Temperature"
-                >SST</span> – <span
+                    title="Temperatura de Superfície do Mar"
+                >TSM</span> – <span
                 class="text-button" id="sea_surface_temp_anomaly"
-                    title="Sea Surface Temperature Anomaly"
-                >SSTA</span> – <span
+                    title="Anomalia de Temperatura na Superfície do Mar"
+                >ATSM</span> – <span
                 class="text-button" id="significant_wave_height"
-                    title="Significant Wave Height"
-                >HTSGW</span> – <span
-                class="text-button" id="no-overlay">None</span>
+                    title="Altura Significativa de Onda"
+                >ASO</span> – <span
+                class="text-button" id="no-overlay">Nenhum</span>
             </p>
             <p class="chem-mode invisible">Overlay | <span
                 class="text-button" id="cosc"
-                    title="Carbon Monoxide Surface Concentration"
+                    title="Concentração de Monóxido de Carbono Superficial"
                 >COsc</span> – <span
                 class="text-button" id="co2sc"
-                    title="Carbon Dioxide Surface Concentration"
+                    title="Concetração de Dióxido de Carbono na Superfície"
                 >CO<sub>2</sub>sc</span><!-- - <span
                 class="text-button" id="co"
-                    title="Carbon Monoxide Surface Concentration"
+                    title="Concentração de Monóxido de Carbono Superficial"
                 >CO</span> - <span
                 class="text-button" id="o3"
                     title="Ozone Surface Concentration"
@@ -719,13 +720,13 @@ sup, sub {
             </p>
             <p class="chem-mode invisible"><span style="visibility:hidden">Overlay</span> | <span
                 class="text-button" id="so2smass"
-                    title="Sulfur Dioxide Surface Mass"
+                    title="Massa de Dióxido de Enxofre Superficial"
                 >SO<sub>2</sub>sm</span>
             </p>
             <p class="chem-mode invisible"><span style="visibility:hidden">Overlay</span> |</p>
             <p class="particulates-mode invisible">Overlay | <span
                 class="text-button" id="duexttau"
-                    title="Dust Extinction (Aerosol Optical Thickness, 550 nm)"
+                    title="Extinção de Poeira (espessura óptica de aerossóis, 550 nm)"
                 >DUex</span> - <span
                 class="text-button" id="pm1"
                     title="Particulate Matter < 1 µm"
@@ -773,28 +774,27 @@ sup, sub {
                 class="text-button" id="argo-recent" title="">Recent</span> – <span
                 class="text-button" id="argo-operational" title="">Operational</span> – <span
                 class="text-button" id="argo-dead" title="">Dead</span> – <span
-                class="text-button" id="argo-none" title="">None</span>
+                class="text-button" id="argo-none" title="">Nenhum</span>
             </p>
 -->
 
-            <p>Projection | <span
+            <p>Projeção | <span
                 class="proj text-button" id="atlantis"
-                    title="Atlantis">A</span> – <span
+                    title="Atlântica">A</span> – <span
                 class="proj text-button" id="conic_equidistant"
-                    title="Conic Equidistant">CE</span> – <span
+                    title="Cônica Equidistante">CE</span> – <span
                 class="proj text-button" id="equirectangular"
-                    title="Equirectangular">E</span> – <span
+                    title="Equiretangular">E</span> – <span
                 class="proj text-button" id="orthographic"
-                    title="Orthographic">O</span> – <span
+                    title="Ortografica">O</span> – <span
                 class="proj text-button" id="patterson"
                     title="Patterson">P</span> – <span
                 class="proj text-button" id="stereographic"
-                    title="Stereographic">S</span> – <span
+                    title="Estereográfica">S</span> – <span
                 class="proj text-button" id="waterman"
-                    title="Waterman Butterfly">WB</span> – <span
+                    title="Borboleta Waterman">WB</span> – <span
                 class="proj text-button" id="winkel3"
-                    title="Winkel Tripel">W3</span>
-					<!-- // MAL --> - <span class="proj text-button" id="azimuthal_equidistant" title="Azimuthal Equidistant">AE</span>
+                    title="Tripel de Winkel">W3</span>
             </p>
             <!--<p>免責事項 | 正確な情報を提供するためのものではありません</p>-->
             <p id="settings-show" class="kiosk">
@@ -806,10 +806,10 @@ sup, sub {
                 <a class="internal-link invisible" lang="pt" data-link="/pt/" href="/pt/">Português</a>
                 <a class="internal-link invisible" lang="ru" data-link="/ru/" href="/ru/">Русский</a>
                 <a class="internal-link invisible" lang="zh-CN" data-link="/zh-cn/" href="/zh-cn/">中文 (简体)</a>
-                <span class="text-button icon" title="settings">&#xf013;</span>
+                <span class="text-button icon" title="Ajustes">&#xf013;</span>
             </p>
             <p id="links" class="kiosk">
-                <a href="about.html" class="internal-link">about</a>
+                <a href="about.html" class="internal-link">sobre</a>
                 <a href="https://www.facebook.com/EarthWindMap" class="icon" title="Facebook">&#xf230;</a>
                 <a href="https://twitter.com/cambecc" class="icon" title="Twitter">&#xf099;</a>
                 <a href="https://www.youtube.com/channel/UCZyd1nnJuvS-EZvAV-IDtPg" class="icon" title="YouTube">&#xf16a;</a>
@@ -822,7 +822,7 @@ sup, sub {
         <div id="settings">
             <section>
                 <h2>
-                    Languages
+                    Linguagens
                     <span id="settings-hide" lang="en" class="text-button">✕</span>
                 </h2>
                 <ul>
@@ -839,25 +839,9 @@ sup, sub {
         </div>
     </div>
 
+    <!--<script defer src="/bundle.js"></script>-->
+    <!-- <script defer src="/js/bundle.js"></script> -->
     <script defer src="/js/bundle.js"></script>
-	    <!-- MAL <script defer src="/js/bundle.js"></script> -->
+
 </body>
 </html>
-<!--
-
-<CTRL SHIFT I> <CONSOLE TAB>
-  set a breakpoint at "initializing..."
-  <F5>
-
-  var s=document.createElement('span'); s.setAttribute("class","proj text-button"); s.setAttribute("id","azimuthal_equidistant"); s.append(" - AE");
-  document.querySelector("#winkel3").parentNode.insertBefore(s, document.querySelector("#winkel3").nextSibling);
-  s=document.createElement('script'); s.setAttribute("src","/js/bundle.js"); document.body.appendChild(s);
-
-<SOURCE TAB> <CTRL-F> builder = _globes__WEBPACK_IMPORTED_MODULE_8_ <ENTER>
-<Set breakpoint> <CLICK MENU ITEM ON GLOBE>
-_globes__WEBPACK_IMPORTED_MODULE_8__["azimuthal_equidistant"]=function azimuthalEquidistant(view) { return newGlobe({ newProjection: function() { return fitProjection(_d3__WEBPACK_IMPORTED_MODULE_2__["geoAzimuthalEquidistant"]().precision(0.1).rotate([0, -90]), view); 	} 	}); }
-
-
-
-
--->

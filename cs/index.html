@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <!-- Copyright (c) 2018 Cameron Beccario. For a free version of this project, see https://github.com/cambecc/earth -->
-<html lang="en" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="cs" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
 <head>
     <meta charset="utf-8"/>
-    <title>earth :: a global map of wind, weather, and ocean conditions</title>
+    <title>earth :: globální mapa větru, počasí a podmínek v oceánu</title>
     <script type="application/ld+json">{
       "@context": "http://schema.org",
       "@type": "Map",
       "name": "earth",
-      "description": "See current wind, weather, ocean, and pollution conditions, as forecast by supercomputers, on an interactive animated map. Updated every three hours.",
+      "description": "Pohleď na interaktivní animovanou mapu okamžitého větru, a podmínek znečištění a oceánu předpovězené superpočítači. Obnoveno každé tři hodiny.",
       "author": {
         "@type": "Person",
         "name": "Cameron Beccario"
@@ -27,7 +28,7 @@
             }
         }
     </script>
-    <meta name="description"        content="See current wind, weather, ocean, and pollution conditions, as forecast by supercomputers, on an interactive animated map. Updated every three hours."/>
+    <meta name="description"        content="Pohleď na interaktivní animovanou mapu okamžitého větru, a podmínek znečištění a oceánu předpovězené superpočítači. Obnoveno každé tři hodiny."/>
 
     <meta name="viewport"           content="initial-scale=0.75, user-scalable=no"/>
     <meta name="format-detection"   content="telephone=no"/>
@@ -37,7 +38,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/ipad-icon.png?v2"/>
 
     <!-- $LANG$ -->
-    <link rel="canonical" href="https://earth-ae.github.io"/>
+    <link rel="canonical" href="https://earth-ae.github.io/cs/"/>
     <link rel="alternate" hreflang="en" href="https://earth-ae.github.io"/>
     <link rel="alternate" hreflang="cs" href="https://earth-ae.github.io/cs/"/>
     <link rel="alternate" hreflang="fr" href="https://earth-ae.github.io/fr/"/>
@@ -54,20 +55,20 @@
 
 @font-face {
     font-family: mplus-2p-light-sub;
-    src: url("/styles/mplus-2p-light-sub.woff2?v3") format("woff2"),
-         url("/styles/mplus-2p-light-sub.woff?v3") format("woff");
+    src: url("/mplus-2p-light-sub.woff2?v3") format("woff2"),
+         url("/mplus-2p-light-sub.woff?v3") format("woff");
 }
 
 @font-face {
     font-family: NotoSansCJKsc-Light-sub;
-    src: url("/styles/NotoSansCJKsc-Light-sub.woff2?v2") format("woff2"),
-         url("/styles/NotoSansCJKsc-Light-sub.woff?v2") format("woff");
+    src: url("/NotoSansCJKsc-Light-sub.woff2?v2") format("woff2"),
+         url("/NotoSansCJKsc-Light-sub.woff?v2") format("woff");
 }
 
 @font-face {
     font-family: fontawesome-sub;
-    src: url("/styles/fontawesome-sub.woff2?v2") format("woff2"),
-         url("/styles/fontawesome-sub.woff?v2") format("woff");
+    src: url("/fontawesome-sub.woff2?v2") format("woff2"),
+         url("/fontawesome-sub.woff?v2") format("woff");
 }
 
 /**************************************************************************************************
@@ -532,7 +533,7 @@ sup, sub {
 </head>
 <body>
 
-    <!--[if lte IE 9]><p id="warn">This site requires Internet Explorer 10 or newer.</p><![endif]-->
+    <!--[if lte IE 10]><p id="warn">Tyto stránky vyžadují Internet Explorer 11, či novější.</p><![endif]-->
 
     <div id="display">
         <canvas id="map" class="max-screen"></canvas>
@@ -548,7 +549,7 @@ sup, sub {
     <div id="sponsor" class="kiosk invisible">
         <!--<p><span id="sponsor-hide" class="text-button invisible">✕</span>favorite lang?</p>-->
         <!--<a id="sponsor-link" href="http://translate.nullschool.net">help translate</a>-->
-        <p><span id="sponsor-hide" class="text-button invisible">✕</span>community</p>
+        <p><span id="sponsor-hide" class="text-button invisible">✕</span>společenství</p>
         <a id="sponsor-link" href="https://www.facebook.com/EarthWindMap">EarthWindMap</a>
     </div>
 
@@ -578,17 +579,17 @@ sup, sub {
         </div>
 
         <div id="menu" class="invisible">
-            <p>Date | <span
+            <p>Datum | <span
                 id="data-date" class="local"></span> <span
                 id="toggle-zone" class="text-button"></span>
             </p>
             <p>Data | <span id="data-layer"></span></p>
-            <p><span id="scale-label">Scale | </span><canvas id="scale"></canvas></p>
-            <p>Source | <span id="data-center"></span></p>
-            <p>Control | <span
+            <p><span id="scale-label">Škála | </span><canvas id="scale"></canvas></p>
+            <p>Zdroj | <span id="data-center"></span></p>
+            <p>Ovládání | <span
                 class="text-button" id="nav-now"
-                    title="Current Conditions"
-                >Now
+                    title="Okamžité podmínky"
+                >Teď
                 </span><span
                 class="noselect"><span
                     class="text-button" id="nav-backward-more"> « </span> – <span
@@ -596,27 +597,27 @@ sup, sub {
                     class="text-button" id="nav-forward"> › </span> – <span
                     class="text-button" id="nav-forward-more"> » </span></span><span
                 class="text-button" id="show-location"
-                    title="Current Position">⊕</span><span
-                class="text-button" id="option-show-grid" title="Toggle Grid"
-                >Grid</span><span
+                    title="Nynější poloha">⊕</span><span
+                class="text-button" id="option-show-grid" title="Zapni/vypni mřížku"
+                >Mřížka</span><span
                 class="text-button" id="animate-start"
-                    title="Start/Stop Animation">▷</span><span
+                    title="Spustit/Zastavit Animaci">▷</span><span
                 class="text-button" id="hd"
-                    title="High Definition Mode"
+                    title="Mód vysokého rozlišení"
                 >HD</span>
             </p>
-            <p>Mode | <span
-                class="text-button" id="air-mode">Air</span> – <span
-                class="text-button" id="ocean-mode">Ocean</span> – <span
+            <p>Mód | <span
+                class="text-button" id="air-mode">Vzduch</span> – <span
+                class="text-button" id="ocean-mode">Oceán</span> – <span
                 class="text-button" id="chem-mode">Chem</span> – <span
-                class="text-button" id="particulates-mode">Particulates</span> – <span
+                class="text-button" id="particulates-mode">Prachové částice</span> – <span
                 class="text-button" id="space-mode">Space</span><!-- – <span
                 class="text-button" id="argo-mode">Argo</span>-->
             </p>
-            <p class="wind-mode">Height | <span
+            <p class="wind-mode">Výška | <span
                 class="surface text-button" id="surface-level"
-                    title="Surface"
-                >Sfc</span> – <span
+                    title="Povrch"
+                >Pvx</span> – <span
                 class="surface text-button" id="isobaric-1000hPa">1000</span> – <span
                 class="surface text-button" id="isobaric-850hPa">850</span> – <span
                 class="surface text-button" id="isobaric-700hPa">700</span> – <span
@@ -625,22 +626,22 @@ sup, sub {
                 class="surface text-button" id="isobaric-70hPa">70</span> – <span
                 class="surface text-button" id="isobaric-10hPa">10</span> hPa
             </p>
-            <p class="wind-mode">Overlay | <span
+            <p class="wind-mode">Vrstva | <span
                 class="text-button" id="wind"
-                    title="Wind Speed"
-                >Wind</span> – <span
+                    title="Rychlost větru"
+                >Vítr</span> – <span
                 class="text-button" id="temp"
-                    title="Temperature"
-                >Temp</span> – <span
+                    title="Teplota"
+                >Tepl</span> – <span
                 class="text-button" id="relative_humidity"
-                    title="Relative Humidity"
-                >RH</span> – <span
+                    title="Relativní vlhkost"
+                >RV</span> – <span
                 class="text-button" id="wind_power_density"
-                    title="Instantaneous Wind Power Density"
-                >WPD</span> – <span
+                    title="Chvilková hustota výkonu větru"
+                >HVV</span> – <span
                 class="text-button" id="precip_3hr"
-                    title="3-hour Precipitation Accumulation"
-                >3HPA</span><!-- – <span
+                    title="3-hodinové úhrnné srážky"
+                >3HÚS</span><!-- – <span
                 class="text-button" id="hrrrwind"
                     title="hrrrwind"
                 >hrrrwind</span> – <span
@@ -651,61 +652,61 @@ sup, sub {
                     title="hrrrradar"
                 >hrrrradar</span>--> – <span
                 class="text-button" id="cape"
-                    title="Convective Available Potential Energy from Surface"
-                >CAPE</span>
+                    title="Konvektivní potenciální energie dostupná z povrchu"
+                >KPEP</span>
             </p>
-            <p class="wind-mode"><span style="visibility:hidden">Overlay</span> | <span
+            <p class="wind-mode"><span style="visibility:hidden">Vrstva</span> | <span
                 class="text-button" id="total_precipitable_water"
-                    title="Total Precipitable Water"
-                >TPW</span> – <span
+                    title="Úhrnná voda ze srážek"
+                >ÚVS</span> – <span
                 class="text-button" id="total_cloud_water"
-                    title="Total Cloud Water"
-                >TCW</span> – <span
+                    title="Úhrná voda v mracích"
+                >ÚVM</span> – <span
                 class="text-button" id="mean_sea_level_pressure"
-                    title="Mean Sea Level Pressure"
-                >MSLP</span> – <span
+                    title="Střední tlak přep. na hladinu moře"
+                >STHM</span> – <span
                 class="text-button" id="misery_index"
-                    title="Misery Index"
-                >MI</span> – <span
-                class="text-button" id="off">None</span>
+                    title="Index ubožáctví"
+                >IU</span> – <span
+                class="text-button" id="off">Žádný</span>
             </p>
-            <p class="ocean-mode invisible">Animate | <span
+            <p class="ocean-mode invisible">Animuj | <span
                 class="text-button" id="animate-currents"
-                    title="Ocean Currents"
-                >Currents</span> – <span
+                    title="Oceánské proudy"
+                >Proudy</span> – <span
                 class="text-button" id="animate-waves"
-                    title="Peak Wave Period"
-                >Waves</span>
+                    title="Perioda maxima vlny"
+                >Vlny</span>
             </p>
-            <p class="ocean-mode invisible">Overlay | <span
+            <p class="ocean-mode invisible">Vrstva | <span
                 class="text-button" id="currents"
-                    title="Ocean Currents"
-                >Currents</span> – <span
+                    title="Oceánské proudy"
+                >Proudy</span> – <span
                 class="text-button" id="primary_waves"
-                    title="Peak Wave Period"
-                >Waves</span>
+                    title="Perioda maxima vlny"
+                >Vlny</span>
             </p>
-            <p class="ocean-mode invisible"><span style="visibility:hidden">Overlay</span> | <span
+            <p class="ocean-mode invisible"><span style="visibility:hidden">Vrstva</span> | <span
                 class="text-button" id="sea_surface_temp"
-                    title="Sea Surface Temperature"
-                >SST</span> – <span
+                    title="Teplota povrchu moře"
+                >TPM</span> – <span
                 class="text-button" id="sea_surface_temp_anomaly"
-                    title="Sea Surface Temperature Anomaly"
-                >SSTA</span> – <span
+                    title="Anomálie teploty povrchu moře"
+                >ATPM</span> – <span
                 class="text-button" id="significant_wave_height"
-                    title="Significant Wave Height"
-                >HTSGW</span> – <span
-                class="text-button" id="no-overlay">None</span>
+                    title="Významná výška vlny"
+                >VVV</span> – <span
+                class="text-button" id="no-overlay">Žádný</span>
             </p>
-            <p class="chem-mode invisible">Overlay | <span
+            <p class="chem-mode invisible">Vrstva | <span
                 class="text-button" id="cosc"
-                    title="Carbon Monoxide Surface Concentration"
-                >COsc</span> – <span
+                    title="Koncentrace povrchového oxidu uhelnatého"
+                >pkCO</span> – <span
                 class="text-button" id="co2sc"
-                    title="Carbon Dioxide Surface Concentration"
-                >CO<sub>2</sub>sc</span><!-- - <span
+                    title="Povrchová koncentrace oxidu uhličitého"
+                >pkCO<sub>2</sub></span><!-- - <span
                 class="text-button" id="co"
-                    title="Carbon Monoxide Surface Concentration"
+                    title="Koncentrace povrchového oxidu uhelnatého"
                 >CO</span> - <span
                 class="text-button" id="o3"
                     title="Ozone Surface Concentration"
@@ -717,15 +718,15 @@ sup, sub {
                     title="Sulfur Dioxide Surface Concentration"
                 >SO<sub>2</sub></span>-->
             </p>
-            <p class="chem-mode invisible"><span style="visibility:hidden">Overlay</span> | <span
+            <p class="chem-mode invisible"><span style="visibility:hidden">Vrstva</span> | <span
                 class="text-button" id="so2smass"
-                    title="Sulfur Dioxide Surface Mass"
-                >SO<sub>2</sub>sm</span>
+                    title="Povrchová hmota oxidu siřičitého"
+                >phSO<sub>2</sub></span>
             </p>
-            <p class="chem-mode invisible"><span style="visibility:hidden">Overlay</span> |</p>
-            <p class="particulates-mode invisible">Overlay | <span
+            <p class="chem-mode invisible"><span style="visibility:hidden">Vrstva</span> |</p>
+            <p class="particulates-mode invisible">Vrstva | <span
                 class="text-button" id="duexttau"
-                    title="Dust Extinction (Aerosol Optical Thickness, 550 nm)"
+                    title="Zatemnění prachem (optická tloušťka aerosolů na 550 nm)"
                 >DUex</span> - <span
                 class="text-button" id="pm1"
                     title="Particulate Matter < 1 µm"
@@ -737,20 +738,20 @@ sup, sub {
                     title="Particulate Matter < 10 µm"
                 >PM<sub>10</sub></span>
             </p>
-            <p class="particulates-mode invisible"><span style="visibility:hidden">Overlay</span> | <span
+            <p class="particulates-mode invisible"><span style="visibility:hidden">Vrstva</span> | <span
                 class="text-button" id="suexttau"
-                    title="Sulfate Extinction (Aerosol Optical Thickness, 550 nm)"
-                >SO<sub>4</sub>ex</span>
+                    title="Zatemnění sulfáty (optická aerosolová tloušťka na 550 nm)"
+                >zpSO<sub>4</sub></span>
             </p>
-            <p class="particulates-mode invisible"><span style="visibility:hidden">Overlay</span> |</p>
+            <p class="particulates-mode invisible"><span style="visibility:hidden">Vrstva</span> |</p>
 
-            <p class="space-mode invisible">Overlay | <span
+            <p class="space-mode invisible">Vrstva | <span
                 class="text-button" id="aurora"
                     title="Aurora"
                 >Aurora</span>
             </p>
-            <p class="space-mode invisible"><span style="visibility:hidden">Overlay</span> |</p>
-            <p class="space-mode invisible"><span style="visibility:hidden">Overlay</span> |</p>
+            <p class="space-mode invisible"><span style="visibility:hidden">Vrstva</span> |</p>
+            <p class="space-mode invisible"><span style="visibility:hidden">Vrstva</span> |</p>
 
 <!--
             <p class="argo-mode">Pressure | <span
@@ -762,8 +763,8 @@ sup, sub {
                 class="argo-surface text-button" id="dbar-1000">1000</span> – <span
                 class="argo-surface text-button" id="dbar-1500">1500</span> dbar
             </p>
-            <p class="argo-mode invisible">Overlay | <span
-                class="text-button" id="argo_mean_temp" title="">Temp</span> – <span
+            <p class="argo-mode invisible">Vrstva | <span
+                class="text-button" id="argo_mean_temp" title="">Tepl</span> – <span
                 class="text-button" id="argo_temp_anom" title="">Temp Anom</span> – <span
                 class="text-button" id="argo_mean_salinity" title="">Salinity</span> – <span
                 class="text-button" id="argo_salinity_anom" title="">Salinity Anom</span>
@@ -773,28 +774,27 @@ sup, sub {
                 class="text-button" id="argo-recent" title="">Recent</span> – <span
                 class="text-button" id="argo-operational" title="">Operational</span> – <span
                 class="text-button" id="argo-dead" title="">Dead</span> – <span
-                class="text-button" id="argo-none" title="">None</span>
+                class="text-button" id="argo-none" title="">Žádný</span>
             </p>
 -->
 
-            <p>Projection | <span
+            <p>Projekce | <span
                 class="proj text-button" id="atlantis"
                     title="Atlantis">A</span> – <span
                 class="proj text-button" id="conic_equidistant"
-                    title="Conic Equidistant">CE</span> – <span
+                    title="Ekvidistantní kuželové">CE</span> – <span
                 class="proj text-button" id="equirectangular"
-                    title="Equirectangular">E</span> – <span
+                    title="Ekvidistantní válcová">E</span> – <span
                 class="proj text-button" id="orthographic"
-                    title="Orthographic">O</span> – <span
+                    title="Ortografická">O</span> – <span
                 class="proj text-button" id="patterson"
-                    title="Patterson">P</span> – <span
+                    title="Pattersonovo">P</span> – <span
                 class="proj text-button" id="stereographic"
-                    title="Stereographic">S</span> – <span
+                    title="Stereografické">S</span> – <span
                 class="proj text-button" id="waterman"
-                    title="Waterman Butterfly">WB</span> – <span
+                    title="Watermanova motýlí">WB</span> – <span
                 class="proj text-button" id="winkel3"
-                    title="Winkel Tripel">W3</span>
-					<!-- // MAL --> - <span class="proj text-button" id="azimuthal_equidistant" title="Azimuthal Equidistant">AE</span>
+                    title="Winkelovo III">W3</span>
             </p>
             <!--<p>免責事項 | 正確な情報を提供するためのものではありません</p>-->
             <p id="settings-show" class="kiosk">
@@ -806,10 +806,10 @@ sup, sub {
                 <a class="internal-link invisible" lang="pt" data-link="/pt/" href="/pt/">Português</a>
                 <a class="internal-link invisible" lang="ru" data-link="/ru/" href="/ru/">Русский</a>
                 <a class="internal-link invisible" lang="zh-CN" data-link="/zh-cn/" href="/zh-cn/">中文 (简体)</a>
-                <span class="text-button icon" title="settings">&#xf013;</span>
+                <span class="text-button icon" title="nastavení">&#xf013;</span>
             </p>
             <p id="links" class="kiosk">
-                <a href="about.html" class="internal-link">about</a>
+                <a href="about.html" class="internal-link">O produktu</a>
                 <a href="https://www.facebook.com/EarthWindMap" class="icon" title="Facebook">&#xf230;</a>
                 <a href="https://twitter.com/cambecc" class="icon" title="Twitter">&#xf099;</a>
                 <a href="https://www.youtube.com/channel/UCZyd1nnJuvS-EZvAV-IDtPg" class="icon" title="YouTube">&#xf16a;</a>
@@ -822,7 +822,7 @@ sup, sub {
         <div id="settings">
             <section>
                 <h2>
-                    Languages
+                    Jazyky
                     <span id="settings-hide" lang="en" class="text-button">✕</span>
                 </h2>
                 <ul>
@@ -839,25 +839,9 @@ sup, sub {
         </div>
     </div>
 
+    <!--<script defer src="/bundle.js"></script>-->
+    <!-- <script defer src="/bundle.min.js?v20180831"></script> -->
     <script defer src="/js/bundle.js"></script>
-	    <!-- MAL <script defer src="/js/bundle.js"></script> -->
+
 </body>
 </html>
-<!--
-
-<CTRL SHIFT I> <CONSOLE TAB>
-  set a breakpoint at "initializing..."
-  <F5>
-
-  var s=document.createElement('span'); s.setAttribute("class","proj text-button"); s.setAttribute("id","azimuthal_equidistant"); s.append(" - AE");
-  document.querySelector("#winkel3").parentNode.insertBefore(s, document.querySelector("#winkel3").nextSibling);
-  s=document.createElement('script'); s.setAttribute("src","/js/bundle.js"); document.body.appendChild(s);
-
-<SOURCE TAB> <CTRL-F> builder = _globes__WEBPACK_IMPORTED_MODULE_8_ <ENTER>
-<Set breakpoint> <CLICK MENU ITEM ON GLOBE>
-_globes__WEBPACK_IMPORTED_MODULE_8__["azimuthal_equidistant"]=function azimuthalEquidistant(view) { return newGlobe({ newProjection: function() { return fitProjection(_d3__WEBPACK_IMPORTED_MODULE_2__["geoAzimuthalEquidistant"]().precision(0.1).rotate([0, -90]), view); 	} 	}); }
-
-
-
-
--->
