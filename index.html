@@ -21,12 +21,6 @@
       "image": "https://earth.nullschool.net/sample.png"
     }</script>
     <meta name="description"        content="See current wind, weather, ocean, and pollution conditions, as forecast by supercomputers, on an interactive animated map. Updated every three hours."/>
-    <meta property="og:type"        content="website"/>
-    <meta property="og:title"       content="earth :: a global map of wind, weather, and ocean conditions"/>
-    <meta property="og:description" content="See current wind, weather, ocean, and pollution conditions, as forecast by supercomputers, on an interactive animated map. Updated every three hours."/>
-    <meta property="og:url"         content="https://earth.nullschool.net"/>
-    <meta property="og:image"       content="https://earth.nullschool.net/sample.png"/>
-    <meta property="fb:admins"      content="510217216"/>
 
     <meta name="viewport"           content="initial-scale=0.75, user-scalable=no"/>
     <meta name="format-detection"   content="telephone=no"/>
@@ -528,12 +522,6 @@ sup, sub {
 
     </style>
 
-    <script>
-    window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-    ga('create', 'UA-44235933-2', 'auto');
-    ga('send', 'pageview');
-    </script>
-    <script async src='https://www.google-analytics.com/analytics.js'></script>
 </head>
 <body>
 
@@ -799,7 +787,7 @@ sup, sub {
                     title="Waterman Butterfly">WB</span> – <span
                 class="proj text-button" id="winkel3"
                     title="Winkel Tripel">W3</span>
-					<!-- // MAL --> - <span class="proj text-button" id="azimuthal_equidistant" title="Azimuthal Equidistant">AE</span> 
+					<!-- // MAL --> - <span class="proj text-button" id="azimuthal_equidistant" title="Azimuthal Equidistant">AE</span>
             </p>
             <!--<p>免責事項 | 正確な情報を提供するためのものではありません</p>-->
             <p id="settings-show" class="kiosk">
@@ -853,14 +841,14 @@ sup, sub {
 <CTRL SHIFT I> <CONSOLE TAB>
   set a breakpoint at "initializing..."
   <F5>
-  
-  var s=document.createElement('span'); s.setAttribute("class","proj text-button"); s.setAttribute("id","azimuthal_equidistant"); s.append(" - AE"); 
-  document.querySelector("#winkel3").parentNode.insertBefore(s, document.querySelector("#winkel3").nextSibling); 
+
+  var s=document.createElement('span'); s.setAttribute("class","proj text-button"); s.setAttribute("id","azimuthal_equidistant"); s.append(" - AE");
+  document.querySelector("#winkel3").parentNode.insertBefore(s, document.querySelector("#winkel3").nextSibling);
   s=document.createElement('script'); s.setAttribute("src","/js/bundle.js"); document.body.appendChild(s);
 
 <SOURCE TAB> <CTRL-F> builder = _globes__WEBPACK_IMPORTED_MODULE_8_ <ENTER>
 <Set breakpoint> <CLICK MENU ITEM ON GLOBE>
-_globes__WEBPACK_IMPORTED_MODULE_8__["azimuthal_equidistant"]=function azimuthalEquidistant(view) { return newGlobe({ newProjection: function() { return fitProjection(_d3__WEBPACK_IMPORTED_MODULE_2__["geoAzimuthalEquidistant"]().precision(0.1).rotate([0, -90]), view); 	} 	}); } 
+_globes__WEBPACK_IMPORTED_MODULE_8__["azimuthal_equidistant"]=function azimuthalEquidistant(view) { return newGlobe({ newProjection: function() { return fitProjection(_d3__WEBPACK_IMPORTED_MODULE_2__["geoAzimuthalEquidistant"]().precision(0.1).rotate([0, -90]), view); 	} 	}); }
 
 
 
