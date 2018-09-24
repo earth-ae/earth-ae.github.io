@@ -1,4 +1,12 @@
-# Earth AE (https://github.com/systemsplanet/earth-ae)
+# [Earth AE](https://earth-ae.github.io) a fork of https://github.com/systemsplanet/earth-ae
+
+
+### download data to update it, on Linux or Mac
+
+```shell
+./download-data.sh
+```
+
 
 Earth with a **satisfyingly flat** Azimuthal Equidistant projection.
 
