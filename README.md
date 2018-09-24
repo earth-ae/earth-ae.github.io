@@ -8,9 +8,9 @@
 
 Changes from the fork are:
 
-- Removed google analytics tracking code
-- Fixed languages
-- Redirect to AE map with location of browser is /
+- Removed google analytics tracking code, bunch of snitches
+- Fixed languages, by adding them, the fork was missing all language except for english
+- Redirect to AE map when location of browser is /
 - Hosted on github, obviously, not locally
 - Added download-data.sh script to update the data, works from Linux and Mac, I could care less about Windblows
 - Changed "Rendering Globe..." to "Rendering Flat Earth Map..."
