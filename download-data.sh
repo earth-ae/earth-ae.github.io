@@ -89,19 +89,18 @@ download "gaia.nullschool.net"  "/data/gfs/current"       "current-wind-isobaric
 download "gaia.nullschool.net"  "/data/gfs/current"       "current-primary-wave-30m.epak"
 download "gaia.nullschool.net"  "/data/gfs/current"       "current-sig_height-wave-30m.epak"
 
-# copy data is no longer needed since all other language just use the data in / dir now
-#function copy-data() {
-#    lang="$1";
-#    echo "Copying ./data/ to ./${lang}/";
-#    cp -r "./data/" "./${lang}/";
-#}
+function copy-data() {
+   lang="$1";
+   echo "Copying ./data to ./${lang}/";
+   cp -r "./data" "./${lang}/";
+}
 
-#copy-data cs;
-#copy-data fr;
-#copy-data jp;
-#copy-data pt;
-#copy-data ru;
-#copy-data zh-cn;
+copy-data cs;
+copy-data fr;
+copy-data jp;
+copy-data pt;
+copy-data ru;
+copy-data zh-cn;
 
 echo "Download complete.";
 exit 0;
